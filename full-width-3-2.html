@@ -8,23 +8,26 @@
     body {
       margin: 0;
     }
-    .Wrapper {
+    .Box {
       width: 50%;
       margin: 0 auto;
-    }
-    .Box {
       background-color: tomato;
     }
     .Box2 {
-      width: 100%;
       background-color: blue;
+    }
+    .Box2_Item {
+      width: 50%;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
   <div class="Box">親の幅と同等のコンテンツ</div>
   <div class="Box2">
-    画面幅いっぱいに背景色を敷きたいコンテンツ 
+    <div class="Box2_Item">
+      画面幅いっぱいに背景色を敷きたいコンテンツ 
+    </div>
   </div>
   <div class="Box">親の幅と同等のコンテンツ</div>
 </body>
