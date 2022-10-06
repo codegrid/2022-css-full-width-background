@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    :root {
+      --scrollbar: 0;
+    }
+    body {
+      margin: 0;
+    }
+    .Wrapper {
+      width: 300px;
+      margin: 0 auto;
+    }
+    .Box {
+      background-color: #6ca7ff;
+    }
+    .Full {
+      /* スクロールバーの幅を考慮した50vw */
+      --x50vw: calc((100vw - var(--scrollbar)) / 2);
+
+      margin-right: calc(50% - var(--x50vw) );
+      margin-left: calc(50% - var(--x50vw));
+      padding-right: calc(var(--x50vw) - 50%);
+      padding-left: calc(var(--x50vw) - 50%);
+      background-color: #a6ff33;
+    }
+  </style>
+</head>
+<body>
+  <div class="Wrapper">
+    <div class="Box">親の幅と同等のコンテンツ</div>
+    <div class="Full">画面幅いっぱいに背景色を敷きたいコンテンツ ...</div>
+    <div class="Box">親の幅と同等のコンテンツ</div>
+  </div>
+
+  <div style="height: 2000px;"></div>
+
+  <script>
+    const setScrollbarWidth = () => {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+      // カスタムプロパティの値を更新する
+      document.documentElement.style.setProperty('--scrollbar', `${scrollbarWidth}px`);
+    };
+    // 表示されたとき
+    window.addEventListener('load', setScrollbarWidth);
+    // リサイズしたとき
+    window.addEventListener('resize', setScrollbarWidth);
+  </script>
+</body>
+</html>
