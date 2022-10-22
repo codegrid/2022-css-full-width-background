@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .box {
+      max-width: 300px;
+      padding: 30px;
+      margin: 0 auto;
+      /* 以下画面幅いっぱいに背景色を敷くための指定 */
+      --color: tomato;
+      border-image: linear-gradient(var(--color), var(--color)) fill 0 / / 0 100vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    The quick brown fox jumps over the lazy dog.
+  </div>
+</body>
+</html>
