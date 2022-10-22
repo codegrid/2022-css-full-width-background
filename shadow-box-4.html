@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .box {
+      max-width: 300px;
+      padding: 30px;
+      margin: 0 auto;
+      /* 以下画面幅いっぱいに背景色を敷くための指定 */
+      --color: tomato;
+      background: var(--color);
+      box-shadow: 0 0 0 100vmax var(--color);
+      clip-path: inset(0 -100vmax);
+    }
+  </style>
+</head>
+<body>
+  <div style="max-width: 300px; margin: 0 auto;">
+    <div style="padding: 30px;">別の要素</div>
+    <div class="box" style="outline: 10px solid blue;">
+      The quick brown fox jumps over the lazy dog.
+      The quick brown fox jumps over the lazy dog.
+    </div>
+    <div style="padding: 30px;">別の要素</div>
+  </div>
+</body>
+</html>
